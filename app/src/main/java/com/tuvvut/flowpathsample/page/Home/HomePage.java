@@ -29,12 +29,12 @@ public class HomePage extends RelativeLayout implements PageListener {
     private ListView list;
     private ArrayAdapter<String> adapter;
     private Toast toast;
+    private HomePath path;
 
     public HomePage(Context context, AttributeSet attrs) {
         super(context, attrs);
         presenter = new HomePresenter(context, this);
-        HomePath path = Path.get(context);
-        presenter.setPath(path);
+        path = Path.get(context);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class HomePage extends RelativeLayout implements PageListener {
         list = (ListView) findViewById(R.id.list);
         TextView emptyView = (TextView) findViewById(android.R.id.empty);
 
-        setUserName(presenter.getUserName());
+        userName.setText("User Name: " + path.getUserName());
         adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_expandable_list_item_1, new ArrayList<String>());
         list.setAdapter(adapter);
         list.setEmptyView(emptyView);
@@ -89,13 +89,9 @@ public class HomePage extends RelativeLayout implements PageListener {
         toast.show();
     }
 
-    public void setAdapterData(ArrayList<String> data) {
+    public void setNewsData(ArrayList<String> data) {
         adapter.clear();
         adapter.addAll(data);
         adapter.notifyDataSetChanged();
-    }
-
-    public void setUserName(String name) {
-        userName.setText("User Name: " + name);
     }
 }

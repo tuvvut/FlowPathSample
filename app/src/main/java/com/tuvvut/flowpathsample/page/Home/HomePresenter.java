@@ -16,7 +16,6 @@ import flow.History;
 public class HomePresenter implements API.ResultListener<ArrayList<String>> {
     private Context context;
     private HomePage page;
-    private HomePath path;
     private API api;
 
     public HomePresenter(Context context, HomePage page) {
@@ -25,17 +24,9 @@ public class HomePresenter implements API.ResultListener<ArrayList<String>> {
         api = new API(this);
     }
 
-    public String getUserName() {
-        return path.getUserName();
-    }
-
-    public void setPath(HomePath path) {
-        this.path = path;
-    }
-
     @Override
     public void onResult(boolean isSuccess, ArrayList<String> result) {
-        page.setAdapterData(result);
+        page.setNewsData(result);
     }
 
     public void loadNews() {
