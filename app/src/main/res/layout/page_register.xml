@@ -1,0 +1,32 @@
+<com.tuvvut.flowpathsample.page.Register.RegisterPage
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/state"
+        android:layout_height="wrap_content"
+        android:text="This is a Register Page"/>
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="User Name"/>
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Password"/>
+    <EditText
+        android:id="@+id/passwordAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Password Again"/>
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"/>
+</com.tuvvut.flowpathsample.page.Register.RegisterPage>
