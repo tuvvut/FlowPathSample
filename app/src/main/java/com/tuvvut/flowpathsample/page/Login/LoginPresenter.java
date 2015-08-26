@@ -5,9 +5,11 @@ import android.text.TextUtils;
 
 import com.tuvvut.flowpathsample.model.API;
 import com.tuvvut.flowpathsample.page.Home.HomePath;
+import com.tuvvut.flowpathsample.page.Home.HomePath2;
 
 import flow.Flow;
 import flow.History;
+import flow.path.Path;
 
 /**
  * Created by wu on 2015/08/25
@@ -36,7 +38,13 @@ public class LoginPresenter implements API.ResultListener<String> {
     @Override
     public void onResult(boolean isSuccess, String userName) {
         if (isSuccess) {
-            History history = History.single(new HomePath(userName));
+            Path path;
+            if (!page.isToHomePage2()) {
+                path = new HomePath(userName);
+            } else {
+                path = new HomePath2();
+            }
+            History history = History.single(path);
             Flow.get(context).setHistory(history, Flow.Direction.FORWARD);
         } else {
             page.showErrorMessage("Login Failed.");

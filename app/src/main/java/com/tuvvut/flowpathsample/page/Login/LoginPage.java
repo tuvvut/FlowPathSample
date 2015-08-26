@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ public class LoginPage extends LinearLayout implements PageListener {
     private EditText userName;
     private EditText password;
     private Button login;
+    private CheckBox checkBox;
 
     public LoginPage(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -47,6 +49,7 @@ public class LoginPage extends LinearLayout implements PageListener {
         userName = (EditText) findViewById(R.id.userName);
         password = (EditText) findViewById(R.id.password);
         login = (Button) findViewById(R.id.login);
+        checkBox = (CheckBox) findViewById(R.id.checkBox);
     }
 
     private void assignEvent() {
@@ -65,5 +68,9 @@ public class LoginPage extends LinearLayout implements PageListener {
 
     public void showErrorMessage(String message) {
         state.setText(message);
+    }
+
+    public boolean isToHomePage2(){
+        return checkBox.isChecked();
     }
 }
