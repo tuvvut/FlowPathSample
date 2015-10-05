@@ -9,5 +9,5 @@ import android.view.Menu;
 public interface PageListener {
     void onPageStart(Activity activity);
 
-    void onPrepareOptionsMenu(Activity activity, Menu menu);
+    void onCreateOptionsMenu(Activity activity, Menu menu);
 }

@@ -36,7 +36,7 @@ public class HomePage2 extends RelativeLayout implements PageListener, IHomePage
     }
 
     @Override
-    public void onPrepareOptionsMenu(Activity activity, Menu menu) {
+    public void onCreateOptionsMenu(Activity activity, Menu menu) {
         activity.setTitle(this.getClass().getSimpleName());
     }
 

@@ -88,9 +88,9 @@ public class MainActivity extends AppCompatActivity implements Flow.Dispatcher {
     }
 
     @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        pageListener.onPrepareOptionsMenu(this, menu);
-        return super.onPrepareOptionsMenu(menu);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        pageListener.onCreateOptionsMenu(this, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

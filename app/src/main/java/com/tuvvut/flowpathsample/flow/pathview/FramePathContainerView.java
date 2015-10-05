@@ -107,9 +107,9 @@ public class FramePathContainerView extends FrameLayout implements HandlesBack, 
     }
 
     @Override
-    public void onPrepareOptionsMenu(Activity activity, Menu menu) {
+    public void onCreateOptionsMenu(Activity activity, Menu menu) {
         if (child instanceof PageListener) {
-            ((PageListener) child).onPrepareOptionsMenu(activity, menu);
+            ((PageListener) child).onCreateOptionsMenu(activity, menu);
         }
     }
 }

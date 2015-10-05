@@ -34,7 +34,7 @@ public class IntroductionPage extends LinearLayout implements PageListener{
     }
 
     @Override
-    public void onPrepareOptionsMenu(Activity activity, Menu menu) {
+    public void onCreateOptionsMenu(Activity activity, Menu menu) {
         activity.setTitle(this.getClass().getSimpleName());
     }
 
